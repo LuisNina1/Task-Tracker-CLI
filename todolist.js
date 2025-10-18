@@ -1,5 +1,5 @@
 const readline = require('readline');
-const { createTask, updateTaskById } = require('./task');
+const { createTask, updateTaskById, deleteTaskById, taskList, completedTasks, inprogressTasks, notCompletedTasks } = require('./task');
 
 // Creamos la interfaz de lectura de línea
 const rl = readline.createInterface({
@@ -36,6 +36,7 @@ function handleCommand(line) {
         }
 
         case "delete": {
+            id = args[1];
             if (args.length < 2) {
                 console.log("❌ Usa: delete <id>");
             } else {
@@ -44,21 +45,40 @@ function handleCommand(line) {
             }
         }
         case "mark-in-progress": {
-            break;
+            if (args.length < 2) {
+                console.log("❌ Usa: mark-in-progress <id>");
+            } else {
+                const id = args[1];
+                updateTaskById(id, { status: "in-progress" });
+                break;
+            }
         }
 
         case "mark-done": {
+            if (args.length < 2) {
+                console.log("❌ Usa: mark-done <id>");
+            } else {
+                const id = args[1];
+                updateTaskById(id, { status: "done" });
+            }
             break;
         }
         case "list":
+            taskList();
             break;
-        case "list done": {
+        case "list-done": {
+            console.log("Tareas completadas:");
+            completedTasks();
             break;
         }
-        case "list todo": {
+        case "list-todo": {
+            console.log("Tareas por hacer:");
+            notCompletedTasks();
             break;
         }
-        case "list in-progress": {
+        case "list-in-progress": {
+            console.log("Tareas en progreso:");
+            inprogressTasks();
             break;
         }
 

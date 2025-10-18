@@ -1,44 +1,23 @@
 [
   {
-    "id": "de1861e4-03b9-405e-89dc-7202eeb2e031",
-    "description": "Nueva tarea",
+    "id": "1",
+    "description": "secar platos",
     "status": "pending",
-    "createdAt": "17/10/2025, 10:04:04 p. m.",
-    "updateAt": "17/10/2025, 10:04:04 p. m."
+    "createdAt": "18/10/2025, 8:18:23 a. m.",
+    "updateAt": "18/10/2025, 8:18:47 a. m."
   },
   {
-    "id": "36d938e2-9ddb-4229-bc2e-bc56ae788296",
-    "description": "Nueva tarea de ejemplo",
-    "status": "in progress",
-    "createdAt": "17/10/2025, 10:09:35 p. m.",
-    "updateAt": "17/10/2025, 10:09:35 p. m."
+    "id": "2",
+    "description": "Estender cama",
+    "status": "done",
+    "createdAt": "18/10/2025, 6:22:22 p. m.",
+    "updateAt": "18/10/2025, 6:23:28 p. m."
   },
   {
-    "id": "d271bf11-9271-4030-9d9f-fdd9095e4d68",
-    "description": "CLI UPDATE",
+    "id": "3",
+    "description": "Comer cena",
     "status": "pending",
-    "createdAt": "17/10/2025, 10:36:31 p. m.",
-    "updateAt": "17/10/2025, 10:36:31 p. m."
-  },
-  {
-    "id": "8dd1503c-8aac-4aee-be59-34ebb86730c8",
-    "description": "Nueva tarea de ejemplo",
-    "status": "in progress",
-    "createdAt": "17/10/2025, 10:10:59 p. m.",
-    "updateAt": "17/10/2025, 10:10:59 p. m."
-  },
-  {
-    "id": "71e70a96-8fb1-48a7-a87e-aa0ebe7424bc",
-    "description": "Nueva tarea de ejemplo",
-    "status": "in progress",
-    "createdAt": "17/10/2025, 10:11:34 p. m.",
-    "updateAt": "17/10/2025, 10:11:34 p. m."
-  },
-  {
-    "id": "d94954dd-9cad-448c-bc3e-437826ad6ae3",
-    "description": "Secar platos",
-    "status": "pending",
-    "createdAt": "17/10/2025, 10:26:47 p. m.",
-    "updateAt": "17/10/2025, 10:27:52 p. m."
+    "createdAt": "18/10/2025, 6:28:19 p. m.",
+    "updateAt": "18/10/2025, 6:28:19 p. m."
   }
 ]
