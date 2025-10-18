@@ -1,0 +1,16 @@
+[
+  {
+    "id": "ff9becf1-6e6d-4e67-a133-2c7da6091fd1",
+    "descrip": "Tare con hora actualizada",
+    "status": "pending",
+    "createdAt": "17/10/2025, 7:39:55 p. m.",
+    "updateAt": "17/10/2025, 7:39:55 p. m."
+  },
+  {
+    "id": "d313a2fb-df4e-4add-b084-a1065baf7101",
+    "descrip": "Estudiar Node.js",
+    "status": "Complete",
+    "createdAt": "17/10/2025, 9:25:34 p. m.",
+    "updateAt": "17/10/2025, 9:25:34 p. m."
+  }
+]
