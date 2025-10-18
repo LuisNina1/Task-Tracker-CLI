@@ -1,7 +1,6 @@
 const fs = require('fs');
 const { validateTask, validatePartialTask } = require('./schema/taks');
-const { tr, ja } = require('zod/locales');
-
+const { getPriority } = require('os');
 
 // Ruta del archivo JSON
 const taskJSON = './task.json';
@@ -20,7 +19,6 @@ const createTask = (Task) => {
         id: crypto.randomUUID(), // uuid v4
         ...result.data
     }
-
 
     let data = [];
 
@@ -42,7 +40,7 @@ const updateTaskById = (id, updatedData) => {
     //leendo JSON
     let data = [];
     const jsonContent = fs.readFileSync(taskJSON, 'utf-8');
-    
+
     try {
         data = JSON.parse(jsonContent); // convertir texto a array
     } catch (error) {
@@ -66,7 +64,7 @@ const updateTaskById = (id, updatedData) => {
     fs.writeFileSync(taskJSON, JSON.stringify(data, null, 2), 'utf-8');
 }
 
-updateTaskById('d313a2fb-df4e-4add-b084-a1065baf7101', { status: 'Complete' });
+updateTaskById('d271bf11-9271-4030-9d9f-fdd9095e4d68', { description: 'CLI UPDATE' });
 
 const deteleTaskById = (id) => {
 
@@ -76,9 +74,15 @@ const taskList = () => {
 
 }
 
-const notCompletedTasks = () => {c
+const notCompletedTasks = () => {
+
 }
 
 const inprogressTasks = () => {
 
+}
+
+module.exports = {
+    createTask,
+    updateTaskById
 }
