@@ -2,9 +2,9 @@
   {
     "id": "1",
     "description": "secar platos",
-    "status": "pending",
-    "createdAt": "18/10/2025, 8:18:23 a. m.",
-    "updateAt": "18/10/2025, 8:18:47 a. m."
+    "status": "done",
+    "createdAt": "18/10/2025, 10:49:24 p. m.",
+    "updateAt": "18/10/2025, 10:51:26 p. m."
   },
   {
     "id": "2",
@@ -19,5 +19,12 @@
     "status": "pending",
     "createdAt": "18/10/2025, 6:28:19 p. m.",
     "updateAt": "18/10/2025, 6:28:19 p. m."
+  },
+  {
+    "id": "4",
+    "description": "Lavar ropa",
+    "status": "in-progress",
+    "createdAt": "19/10/2025, 5:29:31 p. m.",
+    "updateAt": "19/10/2025, 5:29:37 p. m."
   }
 ]

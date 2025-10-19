@@ -1,4 +1,5 @@
 const readline = require('readline');
+
 const { createTask, updateTaskById, deleteTaskById, taskList, completedTasks, inprogressTasks, notCompletedTasks } = require('./task');
 
 // Creamos la interfaz de lectura de línea
@@ -13,7 +14,6 @@ function handleCommand(line) {
     const args = line.trim().split(" ");
     const command = args[0];
     const input = args.slice(1).join(" ");
-
     switch (command.toLowerCase()) {
         case "add":
             if (!input) {
@@ -50,6 +50,7 @@ function handleCommand(line) {
             } else {
                 const id = args[1];
                 updateTaskById(id, { status: "in-progress" });
+                console.log(`Tarea ${id} en  progreso.`)
                 break;
             }
         }
@@ -64,20 +65,21 @@ function handleCommand(line) {
             break;
         }
         case "list":
+            console.clear();
             taskList();
             break;
         case "list-done": {
-            console.log("Tareas completadas:");
+            console.clear();
             completedTasks();
             break;
         }
         case "list-todo": {
-            console.log("Tareas por hacer:");
+            console.clear();
             notCompletedTasks();
             break;
         }
         case "list-in-progress": {
-            console.log("Tareas en progreso:");
+            console.clear();
             inprogressTasks();
             break;
         }
@@ -89,10 +91,10 @@ function handleCommand(line) {
             console.log("  delete <ID>              → Elimina una tarea");
             console.log("  mark-in-progress <ID>    → Marca una tarea como 'en progreso'");
             console.log("  mark-done <ID>           → Marca una tarea como 'hecha'");
-            console.log("  list done                → Lista las tareas hechas");
-            console.log("  list todo                → Lista las tareas por hacer");
-            console.log("  list in-progress         → Lista las tareas en progreso");
             console.log("  list                     → Lista todas las tareas");
+            console.log("  list-done                → Lista las tareas hechas");
+            console.log("  list-todo                → Lista las tareas por hacer");
+            console.log("  list-in-progress         → Lista las tareas en progreso");
             console.log("  exit                     → Cierra la CLI");
             break;
 

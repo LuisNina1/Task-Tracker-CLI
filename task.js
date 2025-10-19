@@ -1,6 +1,7 @@
 const fs = require('fs');
 const { validateTask, validatePartialTask } = require('./schema/taks');
 const { getPriority } = require('os');
+const pc = require('picocolors');
 
 // Ruta del archivo JSON
 const taskJSON = './task.json';
@@ -85,10 +86,21 @@ const taskList = () => {
         console.log("📭 No hay tareas guardadas.");
     } else {
         console.log("📋 Lista de tareas:");
+        console.log(
+            `${pc.bold('ID'.padEnd(12))}` +
+            `${pc.bold('STATUS'.padEnd(20))}` +
+            `${pc.bold('DESCRIPTION'.padEnd(25))}` +
+            `${pc.bold('FECHA')}`
+        );
+
         tasks.forEach((task, i) => {
-            console.log(
-                `${i + 1}. [${task.id}] ${task.status} ${task.description} (${task.createdAt})`
-            );
+
+            const id = pc.blue(task.id.padEnd(10));
+            const status = task.status.padEnd(19);
+            const desc = pc.yellowBright(task.description.padEnd(24));
+            const date = pc.cyanBright(task.createdAt);
+
+            console.log(` ${id} ${status} ${desc} ${date}`);
         });
 
     }
@@ -103,11 +115,20 @@ const completedTasks = () => {
         console.log("📭 No hay tareas guardadas.")
     } else {
         console.log("📋 Lista de tareas hechas:");
+        console.log(
+            `${pc.bold('ID'.padEnd(12))}` +
+            `${pc.bold('STATUS'.padEnd(20))}` +
+            `${pc.bold('DESCRIPTION'.padEnd(25))}` +
+            `${pc.bold('FECHA')}`
+        );
         tasks.forEach((task, i) => {
             if (task.status === "done") {
-                console.log(
-                    `${i + 1}. [${task.id}] ${task.status} ${task.description} (${task.createdAt})`
-                );
+                const id = pc.blue(task.id.padEnd(10));
+                const status = pc.greenBright(task.status.padEnd(19));
+                const desc = pc.yellowBright(task.description.padEnd(24));
+                const date = pc.cyanBright(task.createdAt);
+
+                console.log(` ${id} ${status} ${desc} ${date}`);
             }
         });
     };
@@ -118,11 +139,19 @@ const notCompletedTasks = () => {
         console.log("📭 No hay tareas guardadas.")
     } else {
         console.log("📋 Lista de tareas por hacer:")
+        console.log(
+            `${pc.bold('ID'.padEnd(12))}` +
+            `${pc.bold('STATUS'.padEnd(20))}` +
+            `${pc.bold('DESCRIPTION'.padEnd(25))}` +
+            `${pc.bold('FECHA')}`
+        );
         tasks.forEach((task, i) => {
             if (task.status === "in-progress" || task.status === "pending") {
-                console.log(
-                    `${i + 1}. [${task.id}] ${task.status} ${task.description} (${task.createdAt})`
-                );
+                const id = pc.blue(task.id.padEnd(10));
+                const status = task.status.padEnd(19);
+                const desc = pc.yellowBright(task.description.padEnd(24));
+                const date = pc.cyanBright(task.createdAt);
+                console.log(` ${id} ${status} ${desc} ${date}`);
             }
         });
     }
@@ -135,9 +164,11 @@ const inprogressTasks = () => {
         console.log("📋 Lista de tareas en progreso:")
         tasks.forEach((task, i) => {
             if (task.status === "in-progress") {
-                console.log(
-                    `${i + 1}. [${task.id}] ${task.status} ${task.description} (${task.createdAt})`
-                );
+                const id = pc.blue(task.id.padEnd(10));
+                const status = task.status.padEnd(19);
+                const desc = pc.yellowBright(task.description.padEnd(24));
+                const date = pc.cyanBright(task.createdAt);
+                console.log(` ${id} ${status} ${desc} ${date}`);
             }
         })
     }
